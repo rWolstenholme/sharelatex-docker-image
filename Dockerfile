@@ -69,6 +69,11 @@ RUN echo "selected_scheme scheme-full" >> /install-tl-unx/texlive.profile; \
 	/install-tl-unx/install-tl -profile /install-tl-unx/texlive.profile
 RUN rm -r /install-tl-unx; \
 	rm install-tl-unx.tar.gz
+	
+RUN apt-get install -y texlive-latex-extra
+RUN tlmgr init-usertree
+RUN tlmgr update --all
+RUN apt-get install xzdec -y
 
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/texlive/2015/bin/x86_64-linux/
 RUN tlmgr install latexmk
