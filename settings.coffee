@@ -92,14 +92,14 @@ module.exports =
 
 	# Where your instance of ShareLaTeX can be found publicly. This is used
 	# when emails are sent out and in generated links:
-	siteUrl: siteUrl = process.env["SHARELATEX_SITE_URL"] or 'http://localhost'
+	siteUrl: 'http://www.lovable.ninja'
 
 	# The name this is used to describe your ShareLaTeX Installation
-	appName: process.env["SHARELATEX_APP_NAME"] or "ShareLaTeX (Community Edition)"
+	appName: "Texsanity"
 
 	# The email address which users will be directed to as the main point of
 	# contact for this installation of ShareLaTeX.
-	adminEmail: process.env["SHARELATEX_ADMIN_EMAIL"] or "placeholder@example.com"
+	adminEmail: "ryanwolstenholme@gmail.com"
 	
 	# If provided, a sessionSecret is used to sign cookies so that they cannot be
 	# spoofed. This is recommended.
