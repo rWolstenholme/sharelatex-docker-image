@@ -64,6 +64,7 @@ RUN apt-get install -y wget
 RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
 	mkdir /install-tl-unx; \
 	tar -xvf install-tl-unx.tar.gz -C /install-tl-unx --strip-components=1
+RUN echo "shell_escape = t" >> /usr/local/texlive/2015/texmf.cnf;
 
 RUN echo "selected_scheme scheme-full" >> /install-tl-unx/texlive.profile; \
 	/install-tl-unx/install-tl -profile /install-tl-unx/texlive.profile
