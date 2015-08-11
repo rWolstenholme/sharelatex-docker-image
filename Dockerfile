@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.17
 
 # Install Node.js and Grunt
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
