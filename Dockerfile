@@ -64,7 +64,6 @@ RUN apt-get install -y wget
 RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
 	mkdir /install-tl-unx; \
 	tar -xvf install-tl-unx.tar.gz -C /install-tl-unx --strip-components=1
-RUN echo "shell_escape = t" >> /usr/local/texlive/2015/texmf.cnf;
 
 RUN echo "selected_scheme scheme-full" >> /install-tl-unx/texlive.profile; \
 	/install-tl-unx/install-tl -profile /install-tl-unx/texlive.profile
@@ -74,6 +73,8 @@ RUN rm -r /install-tl-unx; \
 RUN apt-get install -y texlive-latex-extra xzdec
 RUN tlmgr init-usertree
 RUN tlmgr update --all
+
+RUN echo "shell_escape = t" >> /usr/local/texlive/2015/texmf.cnf;
 
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/texlive/2015/bin/x86_64-linux/
 RUN tlmgr install latexmk
