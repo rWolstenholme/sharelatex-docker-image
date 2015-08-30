@@ -70,7 +70,6 @@ RUN echo "selected_scheme scheme-full" >> /install-tl-unx/texlive.profile; \
 RUN rm -r /install-tl-unx; \
 	rm install-tl-unx.tar.gz
 	
-RUN apt-get install -y texlive-latex-extra xzdec
 RUN tlmgr init-usertree
 RUN tlmgr update --all
 
