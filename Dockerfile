@@ -14,7 +14,7 @@ RUN adduser --system --group --home /var/www/sharelatex --no-create-home sharela
 
 # Install ShareLaTeX
 RUN apt-get install -y git python
-RUN git clone https://github.com/sharelatex/sharelatex.git /var/www/sharelatex
+RUN git clone --branch v0.1.4 https://github.com/sharelatex/sharelatex.git /var/www/sharelatex
 
 # zlib1g-dev is needed to compile the synctex binaries in the CLSI during `grunt install`.
 RUN apt-get install -y zlib1g-dev
